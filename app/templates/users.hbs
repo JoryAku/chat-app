@@ -1,0 +1,18 @@
+<h1>Users page</h1>
+
+<form>
+
+  {{input value=newUser.name placeholder='New nickname'}}
+  {{input value=newUser.email placeholder='User email'}}
+
+  <button type="submit"{{action 'addUser' newUser}}>Add</button>
+
+</form>
+<div class="list-group">
+  <div class="list-group-item">{{#each model as |user|}}
+    {{#link-to 'user.user' user class="list-group-item"}
+  {{/each}}
+  </div>
+</div>
+
+{{outlet}}
